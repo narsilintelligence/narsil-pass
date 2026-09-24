@@ -1,0 +1,28 @@
+# ── Entornos y artefactos ──────────────────────────────────────────────────
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+ui/dist/
+build/
+dist/
+.venv-build/
+
+# ── Nunca una base real en el repositorio: solo fixtures de prueba ──────────
+*.kdbx
+!tests/fixtures/*.kdbx
+*.key
+!tests/fixtures/*.key
+*.keyx
+!tests/fixtures/*.keyx
+
+# ── Capturas y ruido ────────────────────────────────────────────────────────
+capturas/
+*.log
+.DS_Store
+Thumbs.db
+ui/dist-demo/
+
+# ── La base de ejemplo sintética sí se versiona ─────────────────────────────
+!ejemplos/*.kdbx

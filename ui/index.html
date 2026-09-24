@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Sin red: nada puede salir de la ventana aunque hubiera un fallo en la interfaz.
+         'unsafe-eval' lo exige pywebview: crea las funciones del puente con new Function y devuelve
+         cada respuesta con eval. Sin él la interfaz no habla con Python. No abre ninguna vía de red. -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline'; img-src data:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NARSIL Pass</title>
+  </head>
+  <body>
+    <div id="raiz"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

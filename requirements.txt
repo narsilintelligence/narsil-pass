@@ -1,0 +1,5 @@
+# Núcleo de NARSIL Pass: KDBX 4 propio sobre primitivas auditadas. Sin dependencias de red.
+cryptography==50.0.1
+argon2-cffi==25.1.0
+pycryptodomex==3.23.0
+lxml==6.1.3

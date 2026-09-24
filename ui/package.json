@@ -1,0 +1,24 @@
+{
+  "name": "narsil-pass-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "build:demo": "tsc --noEmit && vite build --mode demo --outDir dist-demo"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "playwright": "^1.60.0",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3",
+    "vite-plugin-singlefile": "^2.1.0"
+  }
+}
