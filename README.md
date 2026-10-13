@@ -18,11 +18,11 @@
 </p>
 
 > **Un desarrollo propio de NARSIL Intelligence.** NARSIL Pass es el gestor de contraseñas de
-> *NARSIL Intelligence Platform*, la plataforma de investigación en fuentes abiertas que
-> desarrollamos íntegramente en NARSIL Intelligence: el **Módulo de navegación** con sus
-> identidades aisladas, **S.A.R.A.**, el arnés de investigación supervisada con expedientes,
-> cartografía y monitorización, **NARSIL Brain**, la inteligencia que trabaja dentro, y este
-> gestor, donde el investigador guarda las credenciales y las identidades con las que trabaja.
+> *NARSIL Intelligence Platform*, la plataforma de investigación que desarrollamos íntegramente en
+> NARSIL Intelligence: cinco módulos y un nodo soberano. En el equipo de cada operador viven
+> **NARSIL Navegación**, con sus identidades de navegación aisladas, y este gestor, donde el
+> investigador guarda las credenciales y las identidades con las que trabaja; en el nodo de la
+> organización, **NARSIL S.A.R.A.** (casos, análisis y monitores), **NARSIL Agents** y **NARSIL Brain**.
 > NARSIL Pass se ofrece completo y sin coste a cualquier investigador u organización; el resto de
 > la plataforma se presenta en [narsilintelligence.com/narsil-ip](https://narsilintelligence.com/narsil-ip).
 
@@ -300,9 +300,10 @@ desbloquear.
 | Sistema | Qué es |
 |---|---|
 | **NARSIL Pass** | Este programa: credenciales e identidades operativas, en el equipo de cada investigador. Gratuito. |
-| **NARSIL Navegación** | El Módulo de navegación: un navegador aislado por identidad, en el equipo de cada operador. Gratuito. |
-| **NARSIL S.A.R.A.** | *Supervised Autonomous Research Architecture*: expedientes, cartografía, monitorización y agentes, en el servidor de la organización. |
-| **NARSIL Brain** | La inteligencia que trabaja dentro de S.A.R.A. |
+| **NARSIL Navegación** | Identidades de navegación aisladas para OSINT, SOCMINT y Virtual HUMINT, cada una con su navegador, en el equipo de cada operador. Gratuito. |
+| **NARSIL S.A.R.A.** | *Supervised Autonomous Research Architecture*: casos, análisis, monitores y configuración, en el nodo de la organización. |
+| **NARSIL Agents** | Agentes de investigación que trabajan bajo la supervisión del operador. En desarrollo. |
+| **NARSIL Brain** | Razonamiento local, dentro del nodo: el caso no sale de él para razonar sobre él. En desarrollo. |
 
 NARSIL Pass funciona solo y no necesita el resto de la plataforma.
 

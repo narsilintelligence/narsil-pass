@@ -8,7 +8,7 @@ import sys
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 EMPAQUETADO = bool(getattr(sys, "frozen", False))
 IDIOMAS = ("es", "en", "fr", "de", "it", "pt")
 

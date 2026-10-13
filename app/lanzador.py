@@ -2,7 +2,8 @@
 
   narsil-pass [base.kdbx]   abre la ventana (con esa base preseleccionada, si se indica)
   narsil-pass --autoprueba  comprueba el núcleo sin ventana (crear, guardar, releer, 3.1 y 4,
-                            TOTP, generador) y termina con 0 si todo está bien. La usa el CI.
+                            TOTP, generador) y, en Linux, que la ventana (GTK y WebKitGTK) va dentro
+                            del ejecutable; termina con 0 si todo está bien. La usa el CI.
 """
 from __future__ import annotations
 
@@ -68,6 +69,15 @@ def autoprueba() -> int:
         assert Base.abrir(Path(ruta).read_bytes(), "clave-ñ").version_texto == "KDBX 3.1"
         assert totp.leer({"otp": "otpauth://totp/x?secret=GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ&digits=8"}).codigo(59) == "94287082"
         assert len(generador.contrasena(30)) == 30
+    if sys.platform.startswith("linux"):
+        # Sin esto el ejecutable se construye igual, pero no abre ventana en ningún Linux (1.0.0).
+        import gi
+        gi.require_version("Gtk", "3.0")
+        try:
+            gi.require_version("WebKit2", "4.1")
+        except ValueError:
+            gi.require_version("WebKit2", "4.0")
+        from gi.repository import Gtk, WebKit2  # noqa: F401
     print(f"NARSIL Pass {VERSION}: autoprueba correcta")
     return 0
 

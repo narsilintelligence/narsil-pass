@@ -8,7 +8,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 RAIZ="$(pwd)"
 test -f ui/dist/index.html || { echo "Falta ui/dist/index.html: cd ui && npm ci && npm run build"; exit 1; }
 VENV=.venv-build
-[ -x "$VENV/bin/python" ] || python3 -m venv --system-site-packages "$VENV"
+# Python del sistema: es el único que ve el gi de WebKitGTK instalado con apt. Con otro intérprete
+# (setup-python en el CI) PyInstaller empaqueta sin gi y el ejecutable no abre ventana.
+[ -x "$VENV/bin/python" ] || /usr/bin/python3 -m venv --system-site-packages "$VENV"
+"$VENV/bin/python" -c "import gi" 2>/dev/null || { echo "El entorno de construcción no ve gi (python3-gi): no se construye."; exit 1; }
 "$VENV/bin/pip" install --disable-pip-version-check --quiet --upgrade pip
 "$VENV/bin/pip" install --disable-pip-version-check --quiet -r requirements.txt -r empaquetado/requirements-build.txt
 NOMBRE="narsil-pass-linux-$(uname -m)"

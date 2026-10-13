@@ -97,7 +97,7 @@ export function crearDemo() {
     fechas: { CreationTime: hace(120), LastModificationTime: e.modificada }, historial: e.historial.map((h, i) => ({ indice: i, ...h })),
     adjuntos_lista: e.adjuntos, en_papelera: e.grupo === 'pap' })
   return {
-    estado: () => ok({ version: '1.0.0', idioma, recientes: ['C:\\Users\\operador\\Documents\\unidad.kdbx', 'C:\\Users\\operador\\Documents\\personal.kdbx'], inicial: null, abierta,
+    estado: () => ok({ version: '1.0.1', idioma, recientes: ['C:\\Users\\operador\\Documents\\unidad.kdbx', 'C:\\Users\\operador\\Documents\\personal.kdbx'], inicial: null, abierta,
       info: abierta ? info() : null, preferencias: pref, portapapeles_nativo: true }),
     guardar_preferencias: (x: Obj) => { if (typeof x.idioma === 'string') idioma = x.idioma; Object.assign(pref, x); return ok() },
     olvidar_reciente: () => ok(),
