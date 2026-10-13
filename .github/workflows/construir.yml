@@ -54,7 +54,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Interfaz
-        run: npm ci && npm audit --audit-level=high && npm run build
+        # Bloquea por lo que va dentro del ejecutable (dependencias de producción). Las de compilación
+        # se informan sin bloquear: algunos avisos no tienen versión corregida publicada.
+        run: npm ci && npm audit --omit=dev --audit-level=high && (npm audit --audit-level=high || true) && npm run build
         working-directory: ui
       - name: Pruebas de los modelos de la interfaz (ficha y listado)
         run: node scripts/prueba_identidad.mjs && node scripts/prueba_listado.mjs
